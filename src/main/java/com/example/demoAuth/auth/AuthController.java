@@ -45,7 +45,7 @@ public class AuthController {
 			Instant now = Instant.now();
 			String token = this.jwtEncoder.encode(
 					JwtEncoderParameters.from(
-							JwsHeader.with(SignatureAlgorithm.RS256).build(),
+							JwsHeader.with(SignatureAlgorithm.HS256).build(),
 							JwtClaimsSet.builder()
 									.issuer("http://localhost:8080")
 									.subject(authentication.getName())
